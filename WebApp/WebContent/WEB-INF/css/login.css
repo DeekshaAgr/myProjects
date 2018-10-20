@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+input[type=text], input[type=email], input[type=password] {
+	width: 100%;
+	padding: 5px;
+	margin: 8px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+input[type=submit] {
+	width: 30%;
+	padding: 5px;
+	margin: 8px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+label {
+	width: 100%;
+	
+	left-margin:8px;
+	padding: 5px;
+	color: #036cab;
+	font-size: 20px;
+}
+
+.login_area {
+	width: 30%;
+}
