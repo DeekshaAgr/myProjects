@@ -25,27 +25,42 @@ public class DLL {
 		list.insertAtBeginning(1);
 		list.printDLL(list.head);
 		System.out.println("Count is "+count);
-		list.insertAtEnd(4);
+		list.insertAtEnd(0);
 		list.printDLL(list.head);
 		System.out.println("Count is "+count);
-		list.insertAtIndex(3, 0);
+		list.insertAtIndex(3, 1);
 		list.printDLL(list.head);
 		System.out.println("Count is "+count);
-		list.deleteAtIndex( 0);
+		list.deleteAtIndex(1);
 		list.printDLL(list.head);
 		System.out.println("Count is "+count);
 
 	}
 	
 	private void deleteAtIndex(int index) {
-		if(head==null || index>count-1){
+		if(head==null || index<0 ||index>count-1){
 			System.out.println("Invalid index");
+			return;
 		}
 		Node temp = head, prev= null;
 		while(index!=0){
 			prev= temp;
 			temp= temp.next;
+			index--;
 		}
+		if(prev!=null){
+			prev.next = temp.next;
+		}else{
+			head= temp.next;
+		}
+		if(temp.next !=null){
+			temp.next.prev= prev;
+		}
+		temp.next=null;
+		temp.prev=null;
+		count--;
+		
+		
 	}
 
 	private void insertAtEnd(int data) {
@@ -100,9 +115,12 @@ public class DLL {
 		while(index!=0){
 			prev= temp;
 			temp= temp.next;
+			index--;
 		}
 		newNode.next= temp;
-		temp.prev = newNode;
+		if(temp!=null){
+			temp.prev = newNode;
+		}
 		newNode.prev = prev;
 		if(prev!=null){
 			prev.next= newNode;
