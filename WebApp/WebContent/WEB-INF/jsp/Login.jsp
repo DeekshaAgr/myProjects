@@ -19,7 +19,8 @@
 			<input type="password" placeholder="Enter Password" name="password"
 				required="">
 			<div>
-				<input type="submit" value="Submit">
+				<input type="submit" value="Login">
+				<input type="reset" value="Reset">
 			</div>
 		</div>
 	</form>
